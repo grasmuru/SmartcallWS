@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='UTF-8'?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.smartcall.co.za/2010/12/service" xmlns:ns2="http://www.smartcall.co.za/2010/12/common" xmlns:ns1="http://www.smartcall.co.za/2010/12/message" elementFormDefault="unqualified" targetNamespace="http://www.smartcall.co.za/2010/12/service" version="1.0">
+<xs:import namespace="http://www.smartcall.co.za/2010/12/message" schemaLocation="SmartBatchServiceSchema2.xsd"/>
+<xs:import namespace="http://www.smartcall.co.za/2010/12/common" schemaLocation="SmartBatchServiceSchema3.xsd"/>
+<xs:element name="BaseResponse" type="ns2:baseResponse"/>
+<xs:element name="BaseVo" type="ns2:baseVo"/>
+<xs:element name="CancelRechargeRequest" type="ns1:CancelRechargeRequest"/>
+<xs:element name="CancelRechargeResponse" type="ns1:cancelRechargeResponse"/>
+<xs:element name="DealerBalanceResponse" type="ns1:DealerBalanceResponse"/>
+<xs:element name="DealerRegisteredResponse" type="ns1:DealerRegisteredResponse"/>
+<xs:element name="Error" type="ns2:error"/>
+<xs:element name="FundTransferRequest" type="ns1:FundTransferRequest"/>
+<xs:element name="FundTransferResponse" type="ns1:FundTransferResponse"/>
+<xs:element name="LastTransactionResponse" type="ns1:LastTransactionResponse"/>
+<xs:element name="Network" type="ns2:Network"/>
+<xs:element name="Product" type="ns1:Product"/>
+<xs:element name="ProductRechargeRequest" type="ns1:ProductRechargeRequest"/>
+<xs:element name="ProductType" type="ns1:ProductType"/>
+<xs:element name="Recharge" type="ns1:Recharge"/>
+<xs:element name="RechargeResponse" type="ns1:RechargeResponse"/>
+<xs:element name="ResponseCode" type="ns2:responseCode"/>
+<xs:element name="StatusId" type="ns1:StatusId"/>
+<xs:element name="StockDiscount" type="ns1:StockDiscount"/>
+<xs:element name="StockDiscountsResponse" type="ns1:StockDiscountsResponse"/>
+<xs:element name="Transaction" type="ns1:Transaction"/>
+<xs:element name="getDealerBalance" type="tns:getDealerBalance"/>
+<xs:element name="getDealerBalanceResponse" type="tns:getDealerBalanceResponse"/>
+<xs:element name="getLastTransaction" type="tns:getLastTransaction"/>
+<xs:element name="getLastTransactionForClientReference" type="tns:getLastTransactionForClientReference"/>
+<xs:element name="getLastTransactionForClientReferenceResponse" type="tns:getLastTransactionForClientReferenceResponse"/>
+<xs:element name="getLastTransactionForMsisdn" type="tns:getLastTransactionForMsisdn"/>
+<xs:element name="getLastTransactionForMsisdnResponse" type="tns:getLastTransactionForMsisdnResponse"/>
+<xs:element name="getLastTransactionForOrderReference" type="tns:getLastTransactionForOrderReference"/>
+<xs:element name="getLastTransactionForOrderReferenceResponse" type="tns:getLastTransactionForOrderReferenceResponse"/>
+<xs:element name="getLastTransactionResponse" type="tns:getLastTransactionResponse"/>
+<xs:element name="getNetworks" type="tns:getNetworks"/>
+<xs:element name="getNetworksResponse" type="tns:getNetworksResponse"/>
+<xs:element name="getProductTypes" type="tns:getProductTypes"/>
+<xs:element name="getProductTypesResponse" type="tns:getProductTypesResponse"/>
+<xs:element name="getProducts" type="tns:getProducts"/>
+<xs:element name="getProductsResponse" type="tns:getProductsResponse"/>
+<xs:element name="getStockDiscounts" type="tns:getStockDiscounts"/>
+<xs:element name="getStockDiscountsResponse" type="tns:getStockDiscountsResponse"/>
+<xs:element name="isDealerRegistered" type="tns:isDealerRegistered"/>
+<xs:element name="isDealerRegisteredResponse" type="tns:isDealerRegisteredResponse"/>
+<xs:element name="performCancelRecharge" type="tns:performCancelRecharge"/>
+<xs:element name="performCancelRechargeResponse" type="tns:performCancelRechargeResponse"/>
+<xs:element name="performFundsTransfer" type="tns:performFundsTransfer"/>
+<xs:element name="performFundsTransferResponse" type="tns:performFundsTransferResponse"/>
+<xs:element name="performProductRechargeWithClientReference" type="tns:performProductRechargeWithClientReference"/>
+<xs:element name="performProductRechargeWithClientReferenceResponse" type="tns:performProductRechargeWithClientReferenceResponse"/>
+<xs:complexType name="performFundsTransfer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="fundTransferRequest" type="ns1:FundTransferRequest"/>
+    </xs:sequence>
+  </xs:complexType>
+
+
+<xs:complexType name="performFundsTransferResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="ns1:FundTransferResponse"/>
+    </xs:sequence>
+  </xs:complexType>
+
+
+
+<xs:complexType name="getStockDiscounts">
+    <xs:sequence>
+      <xs:element name="networkId" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getStockDiscountsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="ns1:StockDiscountsResponse"/>
+    </xs:sequence>
+  </xs:complexType>
+
+
+<xs:complexType name="getProducts">
+    <xs:sequence>
+      <xs:element name="networkId" type="xs:long"/>
+      <xs:element name="productTypeId" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getProductsResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="ns1:Product"/>
+    </xs:sequence>
+  </xs:complexType>
+
+<xs:complexType name="getLastTransactionForOrderReference">
+    <xs:sequence>
+      <xs:element name="orderReference" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getLastTransactionForOrderReferenceResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="ns1:LastTransactionResponse"/>
+    </xs:sequence>
+  </xs:complexType>
+
+
+<xs:complexType name="getLastTransactionForClientReference">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="clientReferenceNumber" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getLastTransactionForClientReferenceResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="ns1:LastTransactionResponse"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="performProductRechargeWithClientReference">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="productRechargeRequest" type="ns1:ProductRechargeRequest"/>
+      <xs:element minOccurs="0" name="clientReferenceNumber" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+<xs:complexType name="performProductRechargeWithClientReferenceResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="ns1:RechargeResponse"/>
+    </xs:sequence>
+  </xs:complexType>
+
+
+<xs:complexType name="getProductTypes">
+    <xs:sequence>
+      <xs:element name="networkId" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getProductTypesResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="ns1:ProductType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+<xs:complexType name="getNetworks">
+    <xs:sequence/>
+  </xs:complexType>
+<xs:complexType name="getNetworksResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="ns2:Network"/>
+    </xs:sequence>
+  </xs:complexType>
+
+<xs:complexType name="getDealerBalance">
+    <xs:sequence/>
+  </xs:complexType>
+<xs:complexType name="getDealerBalanceResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="ns1:DealerBalanceResponse"/>
+    </xs:sequence>
+  </xs:complexType>
+
+<xs:complexType name="getLastTransaction">
+    <xs:sequence/>
+  </xs:complexType>
+<xs:complexType name="getLastTransactionResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="ns1:LastTransactionResponse"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="isDealerRegistered">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="queryMsisdn" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="isDealerRegisteredResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="ns1:DealerRegisteredResponse"/>
+    </xs:sequence>
+  </xs:complexType>
+
+<xs:complexType name="performCancelRecharge">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cancelRechargeRequest" type="ns1:CancelRechargeRequest"/>
+    </xs:sequence>
+  </xs:complexType>
+
+<xs:complexType name="performCancelRechargeResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="ns1:cancelRechargeResponse"/>
+    </xs:sequence>
+  </xs:complexType>
+
+<xs:complexType name="getLastTransactionForMsisdn">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="queryMsisdn" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getLastTransactionForMsisdnResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="ns1:LastTransactionResponse"/>
+    </xs:sequence>
+  </xs:complexType>
+
+
+</xs:schema>

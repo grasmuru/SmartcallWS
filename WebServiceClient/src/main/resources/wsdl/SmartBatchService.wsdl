@@ -1,0 +1,448 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:tns="http://www.smartcall.co.za/2010/12/service" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" name="SmartloadService" targetNamespace="http://www.smartcall.co.za/2010/12/service">
+  <wsdl:types>
+<schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:tns="http://www.smartcall.co.za/2010/12/service" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns="http://www.w3.org/2001/XMLSchema">
+			
+  <import namespace="http://www.smartcall.co.za/2010/12/service" schemaLocation="SmartBatchServiceSchema1.xsd"/>
+		
+</schema>
+  </wsdl:types>
+  <wsdl:message name="getLastTransactionForOrderReferenceResponse">
+    <wsdl:part element="tns:getLastTransactionForOrderReferenceResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getLastTransactionResponse">
+    <wsdl:part element="tns:getLastTransactionResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="performProductRechargeWithClientReference">
+    <wsdl:part element="tns:performProductRechargeWithClientReference" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="performCancelRecharge">
+    <wsdl:part element="tns:performCancelRecharge" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getLastTransaction">
+    <wsdl:part element="tns:getLastTransaction" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="performFundsTransfer">
+    <wsdl:part element="tns:performFundsTransfer" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="isDealerRegisteredResponse">
+    <wsdl:part element="tns:isDealerRegisteredResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getLastTransactionForClientReference">
+    <wsdl:part element="tns:getLastTransactionForClientReference" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="performProductRechargeWithClientReferenceResponse">
+    <wsdl:part element="tns:performProductRechargeWithClientReferenceResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getStockDiscounts">
+    <wsdl:part element="tns:getStockDiscounts" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getNetworksResponse">
+    <wsdl:part element="tns:getNetworksResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="performCancelRechargeResponse">
+    <wsdl:part element="tns:performCancelRechargeResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getProductTypes">
+    <wsdl:part element="tns:getProductTypes" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getProducts">
+    <wsdl:part element="tns:getProducts" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getLastTransactionForClientReferenceResponse">
+    <wsdl:part element="tns:getLastTransactionForClientReferenceResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getLastTransactionForMsisdnResponse">
+    <wsdl:part element="tns:getLastTransactionForMsisdnResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getProductsResponse">
+    <wsdl:part element="tns:getProductsResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getDealerBalance">
+    <wsdl:part element="tns:getDealerBalance" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getLastTransactionForMsisdn">
+    <wsdl:part element="tns:getLastTransactionForMsisdn" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getStockDiscountsResponse">
+    <wsdl:part element="tns:getStockDiscountsResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getNetworks">
+    <wsdl:part element="tns:getNetworks" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getDealerBalanceResponse">
+    <wsdl:part element="tns:getDealerBalanceResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getLastTransactionForOrderReference">
+    <wsdl:part element="tns:getLastTransactionForOrderReference" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getProductTypesResponse">
+    <wsdl:part element="tns:getProductTypesResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="isDealerRegistered">
+    <wsdl:part element="tns:isDealerRegistered" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="performFundsTransferResponse">
+    <wsdl:part element="tns:performFundsTransferResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="SmartloadService">
+    <wsdl:operation name="performFundsTransfer">
+      <wsdl:input message="tns:performFundsTransfer" name="performFundsTransfer">
+    </wsdl:input>
+      <wsdl:output message="tns:performFundsTransferResponse" name="performFundsTransferResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getStockDiscounts">
+      <wsdl:input message="tns:getStockDiscounts" name="getStockDiscounts">
+    </wsdl:input>
+      <wsdl:output message="tns:getStockDiscountsResponse" name="getStockDiscountsResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProducts">
+      <wsdl:input message="tns:getProducts" name="getProducts">
+    </wsdl:input>
+      <wsdl:output message="tns:getProductsResponse" name="getProductsResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getLastTransactionForOrderReference">
+      <wsdl:input message="tns:getLastTransactionForOrderReference" name="getLastTransactionForOrderReference">
+    </wsdl:input>
+      <wsdl:output message="tns:getLastTransactionForOrderReferenceResponse" name="getLastTransactionForOrderReferenceResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getLastTransactionForClientReference">
+      <wsdl:input message="tns:getLastTransactionForClientReference" name="getLastTransactionForClientReference">
+    </wsdl:input>
+      <wsdl:output message="tns:getLastTransactionForClientReferenceResponse" name="getLastTransactionForClientReferenceResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="performProductRechargeWithClientReference">
+      <wsdl:input message="tns:performProductRechargeWithClientReference" name="performProductRechargeWithClientReference">
+    </wsdl:input>
+      <wsdl:output message="tns:performProductRechargeWithClientReferenceResponse" name="performProductRechargeWithClientReferenceResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProductTypes">
+      <wsdl:input message="tns:getProductTypes" name="getProductTypes">
+    </wsdl:input>
+      <wsdl:output message="tns:getProductTypesResponse" name="getProductTypesResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getNetworks">
+      <wsdl:input message="tns:getNetworks" name="getNetworks">
+    </wsdl:input>
+      <wsdl:output message="tns:getNetworksResponse" name="getNetworksResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDealerBalance">
+      <wsdl:input message="tns:getDealerBalance" name="getDealerBalance">
+    </wsdl:input>
+      <wsdl:output message="tns:getDealerBalanceResponse" name="getDealerBalanceResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getLastTransaction">
+      <wsdl:input message="tns:getLastTransaction" name="getLastTransaction">
+    </wsdl:input>
+      <wsdl:output message="tns:getLastTransactionResponse" name="getLastTransactionResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isDealerRegistered">
+      <wsdl:input message="tns:isDealerRegistered" name="isDealerRegistered">
+    </wsdl:input>
+      <wsdl:output message="tns:isDealerRegisteredResponse" name="isDealerRegisteredResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="performCancelRecharge">
+      <wsdl:input message="tns:performCancelRecharge" name="performCancelRecharge">
+    </wsdl:input>
+      <wsdl:output message="tns:performCancelRechargeResponse" name="performCancelRechargeResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getLastTransactionForMsisdn">
+      <wsdl:input message="tns:getLastTransactionForMsisdn" name="getLastTransactionForMsisdn">
+    </wsdl:input>
+      <wsdl:output message="tns:getLastTransactionForMsisdnResponse" name="getLastTransactionForMsisdnResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SmartloadServiceSoapBinding" type="tns:SmartloadService">
+    <soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsaw:UsingAddressing wsdl:required="false"/>
+    <wsp:PolicyReference URI="#SecurityServiceSign_Policy"/>
+    <wsdl:operation name="performFundsTransfer">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="performFundsTransfer">
+        <soap12:body use="literal"/>
+    <wsp:PolicyReference URI="#SecurityServiceSign_Input_Policy"/>
+      </wsdl:input>
+      <wsdl:output name="performFundsTransferResponse">
+        <soap12:body use="literal"/>
+    <wsp:PolicyReference URI="#SecurityServiceSign_Output_Policy"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getStockDiscounts">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="getStockDiscounts">
+        <soap12:body use="literal"/>
+    <wsp:PolicyReference URI="#SecurityServiceSign_Input_Policy"/>
+      </wsdl:input>
+      <wsdl:output name="getStockDiscountsResponse">
+        <soap12:body use="literal"/>
+    <wsp:PolicyReference URI="#SecurityServiceSign_Output_Policy"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProducts">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="getProducts">
+        <soap12:body use="literal"/>
+    <wsp:PolicyReference URI="#SecurityServiceSign_Input_Policy"/>
+      </wsdl:input>
+      <wsdl:output name="getProductsResponse">
+        <soap12:body use="literal"/>
+    <wsp:PolicyReference URI="#SecurityServiceSign_Output_Policy"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getLastTransactionForOrderReference">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="getLastTransactionForOrderReference">
+        <soap12:body use="literal"/>
+    <wsp:PolicyReference URI="#SecurityServiceSign_Input_Policy"/>
+      </wsdl:input>
+      <wsdl:output name="getLastTransactionForOrderReferenceResponse">
+        <soap12:body use="literal"/>
+    <wsp:PolicyReference URI="#SecurityServiceSign_Output_Policy"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getLastTransactionForClientReference">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="getLastTransactionForClientReference">
+        <soap12:body use="literal"/>
+    <wsp:PolicyReference URI="#SecurityServiceSign_Input_Policy"/>
+      </wsdl:input>
+      <wsdl:output name="getLastTransactionForClientReferenceResponse">
+        <soap12:body use="literal"/>
+    <wsp:PolicyReference URI="#SecurityServiceSign_Output_Policy"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="performProductRechargeWithClientReference">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="performProductRechargeWithClientReference">
+        <soap12:body use="literal"/>
+    <wsp:PolicyReference URI="#SecurityServiceSign_Input_Policy"/>
+      </wsdl:input>
+      <wsdl:output name="performProductRechargeWithClientReferenceResponse">
+        <soap12:body use="literal"/>
+    <wsp:PolicyReference URI="#SecurityServiceSign_Output_Policy"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProductTypes">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="getProductTypes">
+        <soap12:body use="literal"/>
+    <wsp:PolicyReference URI="#SecurityServiceSign_Input_Policy"/>
+      </wsdl:input>
+      <wsdl:output name="getProductTypesResponse">
+        <soap12:body use="literal"/>
+    <wsp:PolicyReference URI="#SecurityServiceSign_Output_Policy"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDealerBalance">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="getDealerBalance">
+        <soap12:body use="literal"/>
+    <wsp:PolicyReference URI="#SecurityServiceSign_Input_Policy"/>
+      </wsdl:input>
+      <wsdl:output name="getDealerBalanceResponse">
+        <soap12:body use="literal"/>
+    <wsp:PolicyReference URI="#SecurityServiceSign_Output_Policy"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getNetworks">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="getNetworks">
+        <soap12:body use="literal"/>
+    <wsp:PolicyReference URI="#SecurityServiceSign_Input_Policy"/>
+      </wsdl:input>
+      <wsdl:output name="getNetworksResponse">
+        <soap12:body use="literal"/>
+    <wsp:PolicyReference URI="#SecurityServiceSign_Output_Policy"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getLastTransaction">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="getLastTransaction">
+        <soap12:body use="literal"/>
+    <wsp:PolicyReference URI="#SecurityServiceSign_Input_Policy"/>
+      </wsdl:input>
+      <wsdl:output name="getLastTransactionResponse">
+        <soap12:body use="literal"/>
+    <wsp:PolicyReference URI="#SecurityServiceSign_Output_Policy"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isDealerRegistered">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="isDealerRegistered">
+        <soap12:body use="literal"/>
+    <wsp:PolicyReference URI="#SecurityServiceSign_Input_Policy"/>
+      </wsdl:input>
+      <wsdl:output name="isDealerRegisteredResponse">
+        <soap12:body use="literal"/>
+    <wsp:PolicyReference URI="#SecurityServiceSign_Output_Policy"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getLastTransactionForMsisdn">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="getLastTransactionForMsisdn">
+        <soap12:body use="literal"/>
+    <wsp:PolicyReference URI="#SecurityServiceSign_Input_Policy"/>
+      </wsdl:input>
+      <wsdl:output name="getLastTransactionForMsisdnResponse">
+        <soap12:body use="literal"/>
+    <wsp:PolicyReference URI="#SecurityServiceSign_Output_Policy"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="performCancelRecharge">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="performCancelRecharge">
+        <soap12:body use="literal"/>
+    <wsp:PolicyReference URI="#SecurityServiceSign_Input_Policy"/>
+      </wsdl:input>
+      <wsdl:output name="performCancelRechargeResponse">
+        <soap12:body use="literal"/>
+    <wsp:PolicyReference URI="#SecurityServiceSign_Output_Policy"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SmartloadService">
+    <wsdl:port binding="tns:SmartloadServiceSoapBinding" name="SmartloadServicePort">
+      <soap12:address location="http://196.35.119.56:8080/SmartcallServices/SmartloadService"/>
+    </wsdl:port>
+  </wsdl:service>
+    <wsp:Policy xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" wsu:Id="SmartloadServiceSoapBinding_WSAM_Addressing_Policy">
+		<wsam:Addressing xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" wsp:Optional="true">
+			<wsp:Policy/>
+		</wsam:Addressing>
+	</wsp:Policy>
+    <wsp:Policy xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" wsu:Id="SecurityServiceSign_Policy">
+		<wsp:ExactlyOne>
+			<wsp:All>
+				<wsam:Addressing xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" wsp:Optional="true">
+					<wsp:Policy/>
+				</wsam:Addressing>
+				<!-- <mtom:OptimizedMimeSerialization xmlns:mtom="http://schemas.xmlsoap.org/ws/2004/09/policy/optimizedmimeserialization"/> -->
+				<sp:AsymmetricBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+					<wsp:Policy>
+						<sp:InitiatorToken>
+							<wsp:Policy>
+								<sp:X509Token sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+									<wsp:Policy>
+										<sp:WssX509V3Token10/>
+									</wsp:Policy>
+								</sp:X509Token>
+							</wsp:Policy>
+						</sp:InitiatorToken>
+						<sp:RecipientToken>
+							<wsp:Policy>
+								<sp:X509Token sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/Never">
+									<wsp:Policy>
+										<sp:WssX509V3Token10/>
+										<sp:RequireIssuerSerialReference/>
+									</wsp:Policy>
+								</sp:X509Token>
+							</wsp:Policy>
+						</sp:RecipientToken>
+						<sp:Layout>
+							<wsp:Policy>
+								<sp:Lax/>
+							</wsp:Policy>
+						</sp:Layout>
+						<sp:IncludeTimestamp/>
+						<sp:OnlySignEntireHeadersAndBody/>
+						<sp:AlgorithmSuite>
+							<wsp:Policy>
+								<sp:Basic128/>
+							</wsp:Policy>
+						</sp:AlgorithmSuite>
+						<sp:EncryptSignature/>
+					</wsp:Policy>
+				</sp:AsymmetricBinding>
+				<sp:Wss10 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+					<wsp:Policy>
+						<sp:MustSupportRefIssuerSerial/>
+					</wsp:Policy>
+				</sp:Wss10>
+			</wsp:All>
+		</wsp:ExactlyOne>
+	</wsp:Policy>
+    <wsp:Policy xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" wsu:Id="SecurityServiceSign_Input_Policy">
+		<wsp:ExactlyOne>
+			<wsp:All>
+				<sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+					<sp:Body/>
+				</sp:EncryptedParts>
+				<sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+					<sp:Body/>
+					<sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing"/>
+					<sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing"/>
+					<sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing"/>
+					<sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing"/>
+					<sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing"/>
+					<sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing"/>
+					<sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing"/>
+					<sp:Header Name="AckRequested" Namespace="http://docs.oasis-open.org/ws-rx/wsrm/200702"/>
+					<sp:Header Name="SequenceAcknowledgement" Namespace="http://docs.oasis-open.org/ws-rx/wsrm/200702"/>
+					<sp:Header Name="Sequence" Namespace="http://docs.oasis-open.org/ws-rx/wsrm/200702"/>
+					<sp:Header Name="CreateSequence" Namespace="http://docs.oasis-open.org/ws-rx/wsrm/200702"/>
+				</sp:SignedParts>
+			</wsp:All>
+		</wsp:ExactlyOne>
+	</wsp:Policy>
+    <wsp:Policy xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" wsu:Id="SecurityServiceSign_Output_Policy">
+		<wsp:ExactlyOne>
+			<wsp:All>
+				<sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+					<sp:Body/>
+				</sp:EncryptedParts>
+				<sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+					<sp:Body/>
+					<sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing"/>
+					<sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing"/>
+					<sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing"/>
+					<sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing"/>
+					<sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing"/>
+					<sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing"/>
+					<sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing"/>
+					<sp:Header Name="AckRequested" Namespace="http://docs.oasis-open.org/ws-rx/wsrm/200702"/>
+					<sp:Header Name="SequenceAcknowledgement" Namespace="http://docs.oasis-open.org/ws-rx/wsrm/200702"/>
+					<sp:Header Name="Sequence" Namespace="http://docs.oasis-open.org/ws-rx/wsrm/200702"/>
+					<sp:Header Name="CreateSequence" Namespace="http://docs.oasis-open.org/ws-rx/wsrm/200702"/>
+				</sp:SignedParts>
+			</wsp:All>
+		</wsp:ExactlyOne>
+	</wsp:Policy>
+</wsdl:definitions>

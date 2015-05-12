@@ -1,0 +1,185 @@
+<?xml version='1.0' encoding='UTF-8'?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.smartcall.co.za/2010/12/message" xmlns:ns2="http://www.smartcall.co.za/2010/12/service" xmlns:ns1="http://www.smartcall.co.za/2010/12/common" targetNamespace="http://www.smartcall.co.za/2010/12/message" version="1.0">
+<xs:import namespace="http://www.smartcall.co.za/2010/12/common" schemaLocation="SmartBatchServiceSchema3.xsd"/>
+<xs:import namespace="http://www.smartcall.co.za/2010/12/service" schemaLocation="SmartBatchServiceSchema1.xsd"/>
+<xs:complexType name="FundTransferRequest">
+    <xs:complexContent>
+      <xs:extension base="ns1:baseVo">
+        <xs:sequence>
+          <xs:element name="amount" type="xs:int"/>
+          <xs:element minOccurs="0" name="recipientMsisdn" type="xs:string"/>
+          <xs:element name="sendSms" type="xs:boolean"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+<xs:complexType name="FundTransferResponse">
+    <xs:complexContent>
+      <xs:extension base="ns1:baseResponse">
+        <xs:sequence>
+          <xs:element name="currentDealerBalance" type="xs:double"/>
+          <xs:element name="newDealerBalance" type="xs:double"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+<xs:complexType name="StockDiscountsResponse">
+    <xs:complexContent>
+      <xs:extension base="ns1:baseResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="stockDiscounts" nillable="true" type="tns:StockDiscount"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+<xs:complexType name="StockDiscount">
+    <xs:complexContent>
+      <xs:extension base="ns1:baseVo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="discount" type="xs:string"/>
+          <xs:element minOccurs="0" name="pinIndicator" type="xs:string"/>
+          <xs:element minOccurs="0" name="smsIndicator" type="xs:string"/>
+          <xs:element minOccurs="0" name="stock" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+<xs:complexType name="Product">
+    <xs:complexContent>
+      <xs:extension base="ns1:baseVo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="description" type="xs:string"/>
+          <xs:element name="id" type="xs:long"/>
+          <xs:element minOccurs="0" name="name" type="xs:string"/>
+          <xs:element name="networkId" type="xs:long"/>
+          <xs:element name="productTypeId" type="xs:long"/>
+          <xs:element minOccurs="0" name="retailValue" type="xs:decimal"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+<xs:complexType name="LastTransactionResponse">
+    <xs:complexContent>
+      <xs:extension base="ns1:baseResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="transaction" type="tns:Transaction"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+<xs:complexType name="Transaction">
+    <xs:complexContent>
+      <xs:extension base="ns1:baseVo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="additionalVoucherPin" type="xs:string"/>
+          <xs:element minOccurs="0" name="amount" type="xs:string"/>
+          <xs:element minOccurs="0" name="batchNumber" type="xs:string"/>
+          <xs:element minOccurs="0" name="boxNumber" type="xs:string"/>
+          <xs:element minOccurs="0" name="cost" type="xs:string"/>
+          <xs:element minOccurs="0" name="description" type="xs:string"/>
+          <xs:element minOccurs="0" name="discount" type="xs:string"/>
+          <xs:element minOccurs="0" name="expiryDate" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="network" type="xs:string"/>
+          <xs:element minOccurs="0" name="recipientMsisdn" type="xs:string"/>
+          <xs:element minOccurs="0" name="reference" type="xs:string"/>
+          <xs:element minOccurs="0" name="status" type="xs:string"/>
+          <xs:element minOccurs="0" name="statusDate" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="statusId" type="tns:StatusId"/>
+          <xs:element minOccurs="0" name="ticketNumber" type="xs:string"/>
+          <xs:element minOccurs="0" name="voucherPin" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+<xs:complexType name="ProductRechargeRequest">
+    <xs:complexContent>
+      <xs:extension base="ns1:baseVo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="amount" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="deviceId" type="xs:string"/>
+          <xs:element minOccurs="0" name="productId" type="xs:long"/>
+          <xs:element name="sendSms" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="smsRecipientMsisdn" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+<xs:complexType name="RechargeResponse">
+    <xs:complexContent>
+      <xs:extension base="ns1:baseResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="recharge" type="tns:Recharge"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+<xs:complexType name="Recharge">
+    <xs:complexContent>
+      <xs:extension base="ns1:baseVo">
+        <xs:sequence>
+          <xs:element name="balance" type="xs:double"/>
+          <xs:element minOccurs="0" name="batchNumber" type="xs:string"/>
+          <xs:element minOccurs="0" name="boxNumber" type="xs:string"/>
+          <xs:element minOccurs="0" name="expiryDate" type="xs:dateTime"/>
+          <xs:element name="orderReferenceId" type="xs:long"/>
+          <xs:element minOccurs="0" name="ticketNumber" type="xs:string"/>
+          <xs:element minOccurs="0" name="voucherPin" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+<xs:complexType name="ProductType">
+    <xs:complexContent>
+      <xs:extension base="ns1:baseVo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="code" type="xs:string"/>
+          <xs:element minOccurs="0" name="description" type="xs:string"/>
+          <xs:element name="fixedAmount" type="xs:boolean"/>
+          <xs:element name="id" type="xs:long"/>
+          <xs:element name="pinless" type="xs:boolean"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+<xs:complexType name="DealerBalanceResponse">
+    <xs:complexContent>
+      <xs:extension base="ns1:baseResponse">
+        <xs:sequence>
+          <xs:element name="balance" type="xs:double"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+<xs:complexType name="DealerRegisteredResponse">
+    <xs:complexContent>
+      <xs:extension base="ns1:baseResponse">
+        <xs:sequence>
+          <xs:element name="registered" type="xs:boolean"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+<xs:complexType name="CancelRechargeRequest">
+    <xs:complexContent>
+      <xs:extension base="ns1:baseVo">
+        <xs:sequence>
+          <xs:element name="orderReferenceId" type="xs:long"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+<xs:complexType name="cancelRechargeResponse">
+    <xs:complexContent>
+      <xs:extension base="ns1:baseResponse">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+<xs:simpleType name="StatusId">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="REQUESTED"/>
+      <xs:enumeration value="PENDING"/>
+      <xs:enumeration value="SUCESSFUL"/>
+      <xs:enumeration value="FAILED"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

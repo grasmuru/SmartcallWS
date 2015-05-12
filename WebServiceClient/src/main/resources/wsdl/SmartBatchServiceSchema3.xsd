@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8'?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.smartcall.co.za/2010/12/common" xmlns:ns1="http://www.smartcall.co.za/2010/12/service" targetNamespace="http://www.smartcall.co.za/2010/12/common" version="1.0">
+<xs:import namespace="http://www.smartcall.co.za/2010/12/service" schemaLocation="SmartBatchServiceSchema1.xsd"/>
+<xs:complexType name="baseVo">
+    <xs:sequence/>
+  </xs:complexType>
+<xs:complexType name="baseResponse">
+    <xs:complexContent>
+      <xs:extension base="tns:baseVo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="error" type="tns:error"/>
+          <xs:element minOccurs="0" name="responseCode" type="tns:responseCode"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+<xs:complexType name="error">
+    <xs:complexContent>
+      <xs:extension base="tns:baseVo">
+        <xs:sequence>
+          <xs:element name="code" type="xs:int"/>
+          <xs:element minOccurs="0" name="message" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+<xs:complexType name="Network">
+    <xs:complexContent>
+      <xs:extension base="tns:baseVo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="description" type="xs:string"/>
+          <xs:element name="id" type="xs:long"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+<xs:simpleType name="responseCode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SUCCESS"/>
+      <xs:enumeration value="APP_ERROR"/>
+      <xs:enumeration value="SYS_ERROR"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>
