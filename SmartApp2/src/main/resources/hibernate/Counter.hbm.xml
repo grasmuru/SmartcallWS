@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 04 Mar 2015 11:55:50 AM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="za.co.smartcall.smartload.hibernate.Counter" table="COUNTER">
+        <id name="id" type="byte">
+            <column name="ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="increment" type="long">
+            <column name="INCREMENT" not-null="true" />
+        </property>
+        <property name="lastupdate" type="date">
+            <column name="LASTUPDATE" length="10" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

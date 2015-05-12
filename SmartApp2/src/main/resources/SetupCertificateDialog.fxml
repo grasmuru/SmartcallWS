@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="172.0" prefWidth="382.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="za.co.smartcall.smartload.view.SetupCertificateController">
+   <children>
+      <Label layoutX="35.0" layoutY="14.0" text="Setup new certificate:" underline="true" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="5.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="20.0" layoutY="58.0" text="Dealer msisdn : " />
+      <TextField fx:id="dealerMsisdn" layoutX="120.0" layoutY="54.0" prefHeight="25.0" prefWidth="96.0" />
+      <Label layoutX="19.0" layoutY="92.0" text="Key Location :" />
+      <TextField fx:id="keyLocation" disable="false" editable="false" layoutX="120.0" layoutY="88.0" prefHeight="25.0" prefWidth="211.0" />
+      <Button layoutX="14.0" layoutY="127.0" mnemonicParsing="false" onAction="#setupDealer" text="Generate" />
+      <Button layoutX="90.0" layoutY="127.0" mnemonicParsing="false" onAction="#handleReturn" text="Return" />
+   </children>
+</AnchorPane>

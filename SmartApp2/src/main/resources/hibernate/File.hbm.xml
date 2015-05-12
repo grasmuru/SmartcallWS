@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 18 Feb 2015 1:19:51 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="za.co.smartcall.smartload.hibernate.File" table="FILE" >
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="transaction" class="za.co.smartcall.smartload.hibernate.Transaction" fetch="select">
+            <column name="TRANSACTIONID" not-null="true" />
+        </many-to-one>
+        <property name="content" type="string">
+            <column name="CONTENT" length="50" not-null="true" />
+        </property>
+        <property name="lastarchived" type="timestamp">
+            <column name="LASTARCHIVED" length="23" />
+        </property>
+        <property name="receiveddate" type="timestamp">
+            <column name="RECEIVEDDATE" length="23" not-null="true" />
+        </property>
+        <property name="imported" type="boolean">
+            <column name="IMPORTED" not-null="true" />
+        </property>
+        <property name="extracted" type="boolean">
+            <column name="EXTRACTED" not-null="true" />
+        </property>
+        <property name="archived" type="boolean">
+            <column name="ARCHIVED" not-null="true" />
+        </property>
+        <property name="downloadLocation" type="string">
+            <column name="DOWNLOAD_LOCATION" length="50" not-null="true" />
+        </property>
+        <property name="extractLocation" type="string">
+            <column name="EXTRACT_LOCATION" length="50" />
+        </property>
+         <property name="fileName" type="string">
+            <column name="FILENAME" length="50" not-null="true" />
+        </property>
+        <set name="vouchers" table="VOUCHER" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="FILE" not-null="true" />
+            </key>
+            <one-to-many class="za.co.smartcall.smartload.hibernate.Voucher" />
+        </set>
+    </class>
+</hibernate-mapping>

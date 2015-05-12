@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="437.0" prefWidth="382.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="za.co.smartcall.smartload.view.InitialSetupDialogController">
+   <children>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="35.0" layoutY="14.0" prefHeight="27.0" prefWidth="375.0" text="Initial Setup:" textAlignment="CENTER" underline="true" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="5.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="14.0" layoutY="124.0" text="Dealer msisdn : " />
+      <TextField fx:id="dealerMsisdn" layoutX="137.0" layoutY="120.0" prefHeight="25.0" prefWidth="96.0" />
+      <Label layoutX="16.0" layoutY="178.0" text="Logging location:" />
+      <TextField fx:id="loggingLocation" disable="false" editable="true" layoutX="137.0" layoutY="174.0" prefHeight="25.0" prefWidth="211.0" />
+      <Label layoutX="20.0" layoutY="237.0" text="Download location:" />
+      <TextField fx:id="downloadLocation" disable="false" editable="true" layoutX="137.0" layoutY="233.0" prefHeight="25.0" prefWidth="211.0" />
+      <Label layoutX="20.0" layoutY="297.0" text="Extract location:" />
+      <TextField fx:id="extractLocation" disable="false" editable="true" layoutX="137.0" layoutY="293.0" prefHeight="25.0" prefWidth="211.0" />
+      <Label layoutX="20.0" layoutY="55.0" text="Please enter the dealer under you wish to transact. " />
+      <Label layoutX="18.0" layoutY="72.0" text="You will only be able to continue once this has been entered." />
+      <Button onAction="#setupDealer" layoutX="167.0" layoutY="362.0" mnemonicParsing="false" text="OK" />
+   </children>
+</AnchorPane>

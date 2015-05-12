@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16 Feb 2015 12:49:48 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="za.co.smartcall.smartload.hibernate.Product" table="PRODUCT" >
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="producttype" class="za.co.smartcall.smartload.hibernate.Producttype" fetch="select">
+            <column name="PRODUCTTYPE" not-null="true" />
+        </many-to-one>
+        <property name="description" type="string">
+            <column name="DESCRIPTION" length="50" not-null="true" />
+        </property>
+        <property name="discount" type="big_decimal">
+            <column name="DISCOUNT" precision="6" not-null="true" />
+        </property>
+        <property name="maxAmount" type="big_decimal">
+            <column name="MAX_AMOUNT" scale="4" not-null="true" />
+        </property>
+        <property name="minAmount" type="big_decimal">
+            <column name="MIN_AMOUNT" scale="4" not-null="true" />
+        </property>
+        <property name="name" type="string">
+            <column name="NAME" length="50" not-null="true" />
+        </property>
+        <property name="pinIndicator" type="boolean">
+            <column name="PIN_INDICATOR" not-null="true" />
+        </property>
+        <property name="smsIndicator" type="boolean">
+            <column name="SMS_INDICATOR" not-null="true" />
+        </property>
+        <property name="retailValue" type="big_decimal">
+            <column name="RETAIL_VALUE" scale="4" not-null="true" />
+        </property>
+        <set name="transactions" table="TRANSACTION" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="PRODUCT" not-null="true" />
+            </key>
+            <one-to-many class="za.co.smartcall.smartload.hibernate.Transaction" />
+        </set>
+    </class>
+</hibernate-mapping>

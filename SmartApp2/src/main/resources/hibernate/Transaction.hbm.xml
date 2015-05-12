@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 18 Feb 2015 1:19:51 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="za.co.smartcall.smartload.hibernate.Transaction" table="TRANSACTION">
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="product" class="za.co.smartcall.smartload.hibernate.Product" fetch="select">
+            <column name="PRODUCT" not-null="false" />
+        </many-to-one>
+         <many-to-one name="submissionStatus" class="za.co.smartcall.smartload.hibernate.SubmissionStatus" fetch="select">
+            <column name="STATUS_ID" not-null="false" />
+        </many-to-one>
+        <property name="statusDate" type="timestamp">
+            <column name="STATUS_DATE" length="23" not-null="true" />
+        </property>
+        <property name="transactionStatus" type="string">
+            <column name="TRANSACTION_STATUS" length="50" not-null="true" />
+        </property>
+        <property name="retrieved" type="boolean">
+            <column name="RETRIEVED" not-null="true" />
+        </property>
+        <property name="resend" type="int">
+            <column name="RESEND" not-null="true" />
+        </property>
+        <property name="clientReference" type="string">
+            <column name="CLIENT_REFERENCE" length="50" />
+        </property>
+        <property name="amount" type="string">
+            <column name="AMOUNT" length="80" not-null="true" />
+        </property>
+        <property name="batchnumber" type="string">
+            <column name="BATCHNUMBER" length="20" not-null="false" />
+        </property>
+        <property name="boxnumber" type="string">
+            <column name="BOXNUMBER" length="20" not-null="false" />
+        </property>
+        <property name="cost" type="big_decimal">
+            <column name="COST" scale="4" not-null="false" />
+        </property>
+        <property name="description" type="string">
+            <column name="DESCRIPTION" length="50" />
+        </property>
+        <property name="discount" type="big_decimal">
+            <column name="DISCOUNT" precision="3" />
+        </property>
+        <property name="expirydate" type="string">
+            <column name="EXPIRYDATE" length="20" />
+        </property>
+        <property name="password" type="string">
+            <column name="PASSWORD" length="50" not-null="false" />
+        </property>
+        <property name="orderRefNumber" type="string">
+            <column name="ORDER_REF_NUMBER" length="30" not-null="false" />
+        </property>
+        <property name="smsRecipientMsisdn" type="string">
+            <column name="SMS_RECIPIENT_MSISDN" length="15" not-null="false" />
+        </property>
+        <property name="additionalPin" type="string">
+            <column name="ADDITIONAL_PIN" length="50" />
+        </property>
+        <property name="ticketNumber" type="string">
+            <column name="TICKET_NUMBER" length="50" />
+        </property>
+         <property name="voucherPin" type="string">
+            <column name="VOUCHER_PIN" length="50" />
+        </property>
+          <property name="deviceId" type="string">
+            <column name="DEVICE_ID" length="50" />
+        </property>
+        <property name="file" type="boolean">
+            <column name="FILE" not-null="true" />
+        </property>
+         <property name="pinless" type="boolean">
+            <column name="PINLESS" not-null="true" />
+        </property>
+        <property name="responseMessage" type="string">
+            <column name="RESPONSE_MESSAGE" length="150" />
+        </property>
+         <property name="lastFileName" type="string">
+            <column name="LASTFILENAME" length="50" />
+        </property>
+          <property name="batchRequest" type="long">
+            <column name="BATCH_REQUEST" not-null="false" />
+        </property>
+         <many-to-one name="dealer" class="za.co.smartcall.smartload.hibernate.Dealer" fetch="select">
+            <column name="DEALER" not-null="false" />
+        </many-to-one>
+        <set name="files" table="FILE" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="TRANSACTIONID" not-null="true" />
+            </key>
+            <one-to-many class="za.co.smartcall.smartload.hibernate.File" />
+        </set>
+    </class>
+</hibernate-mapping>

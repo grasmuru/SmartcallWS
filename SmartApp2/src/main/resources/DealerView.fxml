@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="za.co.smartcall.smartload.view.DealerView">
+   <children>
+      <SplitPane dividerPositions="0.25" prefHeight="800.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <items>
+            <AnchorPane prefHeight="800.0" prefWidth="190.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="85.0" layoutY="21.0" text="Dealer" underline="true" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label fx:id="dealerMsisdn" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="48.0" text="Not set" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="68.0" text="Balance" textAlignment="CENTER" underline="true" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label fx:id="dealerBalance" alignment="CENTER" contentDisplay="CENTER" layoutX="78.0" layoutY="95.0" text="Unknown" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                 </children>
+            </AnchorPane>
+            <AnchorPane fx:id="anchorPaneTable" prefHeight="800.0" prefWidth="610.0">
+               <children>
+                  <TableView fx:id="transactionTable" layoutX="14.0" layoutY="51.0" prefHeight="700.0" styleClass="label-bright" stylesheets="@Table.css" AnchorPane.bottomAnchor="70.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columns>
+                      <TableColumn fx:id="transactionNetworkColumn" prefWidth="81.0" text="Network" />
+                      <TableColumn fx:id="transactionDateColumn" prefWidth="101.0" text="Date" />
+                        <TableColumn fx:id="transactionTypeColumn" prefWidth="138.0" text="Type" />
+                        <TableColumn fx:id="transactionAmountColumn" prefWidth="121.0" text="Amount" />
+                        <TableColumn fx:id="transactionStatusColumn" prefWidth="75.0" text="Status" />
+                        <TableColumn fx:id="transactionRecipientColumn" prefWidth="108.0" text="Recipient" />
+                        <TableColumn fx:id="transactionPinColumn" prefWidth="120.0" text="Pin" />
+                    </columns>
+                  </TableView>
+                 
+               </children>
+            </AnchorPane>
+         </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

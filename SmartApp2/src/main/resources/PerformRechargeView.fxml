@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="za.co.smartcall.smartload.view.PerformRechargeView">
+	<children>
+		<SplitPane dividerPositions="0.25" prefHeight="800.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+			<items>
+            <AnchorPane prefHeight="800.0" prefWidth="190.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="85.0" layoutY="21.0" text="Dealer" underline="true" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label fx:id="dealerMsisdn" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="48.0" text="Not set" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="68.0" text="Balance" textAlignment="CENTER" underline="true" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label fx:id="dealerBalance" alignment="CENTER" contentDisplay="CENTER" layoutX="78.0" layoutY="95.0" text="Unknown" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                 </children>
+            </AnchorPane>
+				<AnchorPane prefHeight="800.0" prefWidth="300.0">
+					<children>
+						<Label alignment="CENTER" contentDisplay="CENTER" layoutX="35.0" layoutY="14.0" text="Recharge" textAlignment="CENTER" underline="true" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
+							<font>
+								<Font size="18.0" />
+							</font>
+						</Label>
+						<Label layoutX="169.0" layoutY="125.0" text="Network " AnchorPane.leftAnchor="169.0" />
+						<Label layoutX="169.0" layoutY="174.0" text="Product Type" AnchorPane.leftAnchor="169.0" />
+						<ComboBox fx:id="networkSelection" layoutX="332.0" layoutY="121.0" onAction="#handleNetworkSelection" prefHeight="25.0" prefWidth="217.0" />
+						<ComboBox fx:id="productTypeSelection" disable="true" layoutX="332.0" layoutY="170.0" onAction="#handleProductTypeSelection" prefHeight="25.0" prefWidth="217.0" />
+						<Label layoutX="173.0" layoutY="229.0" text="Product" AnchorPane.leftAnchor="173.0" />
+						<CheckBox fx:id="pinless" layoutX="328.0" layoutY="382.0" mnemonicParsing="false" text="Pin" />
+						<CheckBox fx:id="sendSms" layoutX="328.0" layoutY="345.0" mnemonicParsing="false" onAction="#handleSendSms" text="Send Sms" />
+						<Label layoutX="167.0" layoutY="439.0" text="Sms Recipient" AnchorPane.leftAnchor="167.0" />
+						<TextField fx:id="rechargeDeviceId" layoutX="316.0" layoutY="435.0" prefHeight="25.0" prefWidth="217.0" />
+						<Button layoutX="332.0" layoutY="519.0" mnemonicParsing="false" onAction="#perfromRecharge" text="Recharge" />
+						<Label layoutX="185.0" layoutY="469.0" />
+						<ComboBox fx:id="productSelection" disable="true" editable="true" layoutX="328.0" layoutY="225.0" onAction="#handleProductSelection" prefHeight="25.0" prefWidth="217.0" />
+						<Label layoutX="173.0" layoutY="292.0" text="Amount" AnchorPane.leftAnchor="173.0" />
+						<TextField fx:id="productAmount" layoutX="328.0" layoutY="288.0" prefHeight="25.0" prefWidth="73.0" />
+						<Label layoutX="169.0" layoutY="74.0" text="Recipient (Msisdn or Meter)" AnchorPane.leftAnchor="169.0" />
+						<TextField fx:id="recipientMsisdn" layoutX="329.0" layoutY="70.0" prefHeight="25.0" prefWidth="117.0" />
+                  <Label layoutX="96.0" layoutY="588.0" text="Last Recharge:" />
+                  <Label fx:id="lastTransaction" layoutX="185.0" layoutY="588.0" prefHeight="17.0" prefWidth="430.0" text="Label" />
+					</children>
+				 </AnchorPane>	
+			</items>
+		</SplitPane>
+	</children>
+</AnchorPane>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="za.co.smartcall.smartload.view.RootLayoutController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+                  <MenuItem mnemonicParsing="false" onAction="#handleGenerateCertificate" text="Generate certificate.." />
+                  <MenuItem mnemonicParsing="false" onAction="#refesh" text="Refresh offerings.." />
+                  <MenuItem mnemonicParsing="false" onAction="#handleExistingKeys" text="Import exisiting key" />
+                  <MenuItem mnemonicParsing="false" onAction="#refreshConnection" text="Refresh connection.." />
+                </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#handleModifyUrl" text="Webservice url.." />
+              <MenuItem mnemonicParsing="false" onAction="#handleSettingsChange" text="Settings.." />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab text="Overview">
+         	 <content>
+                <fx:include fx:id="embeddedDealerView" source="DealerView.fxml" />
+            </content>
+          </Tab>
+          <Tab text="Recharge">
+            <content>
+                <fx:include fx:id="embeddedPerformRechargeView" source="PerformRechargeView.fxml" />
+            </content>
+          </Tab>
+            <Tab text="Order File">
+               <content>
+                <fx:include fx:id="embeddedFileOrderView" source="FileOrderView.fxml" />
+            </content>
+            </Tab>
+            <Tab text="File management">
+           <content>
+                <fx:include fx:id="embeddedManageFileOrderView" source="ManageFileOrderView.fxml" />
+            </content>
+            </Tab>
+            <Tab text="Transfer">
+              <content>
+                <fx:include fx:id="embeddedTransferView" source="TransferView.fxml" />
+            </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </center>
+</BorderPane>

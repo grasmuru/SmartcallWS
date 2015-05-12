@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="za.co.smartcall.smartload.view.FileOrderView">
+	<children>
+		<SplitPane dividerPositions="0.25" prefHeight="800.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+			<items>
+            <AnchorPane prefHeight="800.0" prefWidth="190.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="85.0" layoutY="21.0" text="Dealer" underline="true" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label fx:id="dealerMsisdn" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="48.0" text="Not set" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="68.0" text="Balance" textAlignment="CENTER" underline="true" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label fx:id="dealerBalance" alignment="CENTER" contentDisplay="CENTER" layoutX="78.0" layoutY="95.0" text="Unknown" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                 </children>
+            </AnchorPane>
+				<AnchorPane fx:id="anchorPaneTable" prefHeight="800.0" prefWidth="610.0">
+					<children>
+						
+                  <TableView fx:id="orderTable" layoutY="46.0" prefHeight="652.0" stylesheets="@Table.css" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                    <columns>
+                      <TableColumn fx:id="orderNetworkColumn" text="Network" />
+                      <TableColumn fx:id="orderProductTypeColumn" prefWidth="124.0" text="Product Type" />
+                        <TableColumn fx:id="orderProductColumn" prefWidth="171.0" text="Product" />
+                        <TableColumn fx:id="orderSelectedColumn" maxWidth="77.0" prefWidth="69.0" text="Select" />
+                        <TableColumn fx:id="orderAmountColumn" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" text="Quantity" />
+                        <TableColumn fx:id="orderHistoryColumn" minWidth="190.0" prefWidth="180.0" text="Last Request" />
+                    </columns>
+                  </TableView>
+                  <Button layoutX="296.0" layoutY="705.0" mnemonicParsing="false" onAction="#isButtonSelect" text="Submit" />
+                  <Button layoutX="358.0" layoutY="705.0" mnemonicParsing="false" onAction="#clearButtonSelect" text="Clear" />
+					</children>
+				</AnchorPane>
+			</items>
+		</SplitPane>
+	</children>
+</AnchorPane>

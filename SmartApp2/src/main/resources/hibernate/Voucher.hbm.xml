@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16 Feb 2015 12:49:48 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="za.co.smartcall.smartload.hibernate.Voucher" table="VOUCHER" >
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="file" class="za.co.smartcall.smartload.hibernate.File" fetch="select">
+            <column name="FILE" not-null="true" />
+        </many-to-one>
+        <property name="boxnumber" type="string">
+            <column name="BOXNUMBER" length="50" not-null="true" />
+        </property>
+        <property name="description" type="string">
+            <column name="DESCRIPTION" length="50" not-null="true" />
+        </property>
+        <property name="expirydate" type="string">
+            <column name="EXPIRYDATE" length="23" not-null="true" />
+        </property>
+        <property name="voucherId" type="string">
+            <column name="VOUCHER_ID" length="50" not-null="true" />
+        </property>
+        <property name="pinNumber" type="string">
+            <column name="PIN_NUMBER" length="50" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="172.0" prefWidth="382.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="za.co.smartcall.smartload.view.ModifyUrlController">
+   <children>
+      <Label layoutX="35.0" layoutY="14.0" text="Modify Webservice Url:" underline="true" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="5.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="14.0" layoutY="86.0" text="Url : " />
+      <TextField fx:id="urlTextField" layoutX="39.0" layoutY="82.0" prefHeight="25.0" prefWidth="321.0" />
+      <Button layoutX="23.0" layoutY="127.0" mnemonicParsing="false" onAction="#modifyUrl" text="Update" />
+      <Button layoutX="84.0" layoutY="127.0" mnemonicParsing="false" onAction="#handleReturn" text="Return" />
+      <Label layoutX="13.0" layoutY="48.0" text="Please contact smartcall if you are not sure what to set here" />
+   </children>
+</AnchorPane>

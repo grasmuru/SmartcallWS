@@ -1,0 +1,19 @@
+.sucess-row-color{
+	 -fx-background-color: #EFFBEF;
+}
+.unsuccess-row-color{
+	-fx-background-color: #FBEFFB; 
+}
+.label {
+    -fx-font-size: 11pt;
+    -fx-font-family: "Segoe UI Semibold";
+    -fx-text-fill: black;
+    -fx-opacity: 0.6;
+}
+.table-row-cell:selected {
+   -fx-background-color: steelblue; 
+}
+.table-row-cell:selected .text {
+       -fx-fill: white ;
+
+}

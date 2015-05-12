@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="za.co.smartcall.smartload.view.ManageFileOrderView">
+	<children>
+		<SplitPane prefHeight="800.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+			<items>
+				<AnchorPane prefHeight="800.0" prefWidth="190.0">
+					<children>
+						<SplitPane dividerPositions="0.3" prefHeight="200.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+							<items>
+								<AnchorPane prefWidth="277.0">
+									<children>
+										<Label alignment="CENTER" layoutX="75.0" layoutY="38.0" text="File Details" textAlignment="CENTER" underline="true" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0">
+											<font>
+												<Font size="14.0" />
+											</font>
+										</Label>
+										<Label layoutX="32.0" layoutY="71.0" prefHeight="17.0" prefWidth="101.0" text="Last File Received:" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="71.0" />
+										<Label layoutX="32.0" layoutY="108.0" text="Outstanding:" AnchorPane.leftAnchor="10.0" />
+										<Label layoutX="32.0" layoutY="146.0" text="Not imported:" AnchorPane.leftAnchor="10.0" />
+										<Label layoutX="32.0" layoutY="182.0" text="Unextracted:" AnchorPane.leftAnchor="10.0" />
+										<Label layoutX="32.0" layoutY="226.0" text="Last Archive:" AnchorPane.leftAnchor="10.0" />
+										<Label fx:id="lastFile" layoutX="110.0" layoutY="71.0" text="Label" />
+										<Label fx:id="numOutstanding" layoutX="89.0" layoutY="108.0" text="Label" />
+										<Label fx:id="unimported" layoutX="96.0" layoutY="146.0" text="Label" />
+										<Label fx:id="unextracted" layoutX="89.0" layoutY="182.0" text="Label" />
+										<Label fx:id="lastArchive" layoutX="89.0" layoutY="226.0" text="Label" />
+										<VBox alignment="CENTER" layoutX="53.0" layoutY="275.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+										<Label layoutX="10.0" layoutY="267.0" text="Download" />
+										<Label layoutX="10.0" layoutY="315.0" text="Extracted" />
+										<Label layoutX="10.0" layoutY="354.0" text="Import" />
+										<ChoiceBox fx:id="importSelection" layoutX="65.0" layoutY="350.0" prefHeight="25.0" prefWidth="180.0" />
+										<Label fx:id="downloadLocation" layoutX="89.0" layoutY="267.0" text="Label" />
+										<Label fx:id="extractLocation" layoutX="89.0" layoutY="315.0" text="Label" />
+												<Button alignment="CENTER_RIGHT" contentDisplay="CENTER" layoutX="82.0" layoutY="647.0" mnemonicParsing="false" onAction="#handleArchive" text="Archive All Imported" textAlignment="CENTER" />
+									</children>
+								</AnchorPane>
+								<AnchorPane fx:id="anchorPaneTable" prefHeight="200.0" prefWidth="610.0">
+									<children>
+										<TableView fx:id="fileTable" layoutX="14.0" layoutY="51.0" prefHeight="761.0" prefWidth="694.0" styleClass="label-bright" stylesheets="@Table.css" AnchorPane.bottomAnchor="79.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+											<columns>
+												<TableColumn fx:id="fileNetworkColumn" prefWidth="96.0" text="Network" />
+												<TableColumn fx:id="fileDateColumn" prefWidth="108.0" text="Date" />
+												<TableColumn fx:id="fileTypeColumn" prefWidth="171.0" text="Type" />
+												<TableColumn fx:id="fileAmountColumn" prefWidth="74.0" text="Amount" />
+												<TableColumn fx:id="fileNameColumn" prefWidth="87.0" text="File Name" />
+												<TableColumn fx:id="fileExtractedColumn" prefWidth="74.0" text="Extracted" />
+												<TableColumn fx:id="fileImportedColumn" prefWidth="85.0" text="Imported" />
+											</columns>
+										</TableView>
+                              <Pagination fx:id="pagination" layoutX="255.0" layoutY="761.0" />
+									</children>
+								</AnchorPane>
+							</items>
+						</SplitPane>
+					</children>
+				</AnchorPane>	
+			</items>
+		</SplitPane>
+	</children>
+</AnchorPane>

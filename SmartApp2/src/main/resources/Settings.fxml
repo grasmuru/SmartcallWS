@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="530.0" prefWidth="436.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="za.co.smartcall.smartload.view.SettingsController">
+   <children>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="157.0" layoutY="14.0" text="Settings:" textAlignment="CENTER" underline="true" AnchorPane.leftAnchor="157.0" AnchorPane.topAnchor="14.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="14.0" layoutY="86.0" text="Path: " />
+      <TextField fx:id="fileTextField" layoutX="64.0" layoutY="82.0" prefHeight="25.0" prefWidth="312.0" />
+      <Button layoutX="130.0" layoutY="472.0" mnemonicParsing="false" onAction="#modifySettings" text="Update" />
+      <Button layoutX="194.0" layoutY="472.0" mnemonicParsing="false" onAction="#handleReturn" text="Return" />
+      <Label layoutX="13.0" layoutY="48.0" text="Please enter the location of the log file and the logging level" />
+      <ChoiceBox fx:id="loggingSettings" layoutX="63.0" layoutY="131.0" prefWidth="150.0" />
+      <Label layoutX="15.0" layoutY="135.0" text="Level" />
+      <Label layoutX="15.0" layoutY="244.0" text="Transaction counter:" />
+      <TextField fx:id="transIdTextField" layoutX="141.0" layoutY="240.0" prefHeight="25.0" prefWidth="95.0" />
+      <Label layoutX="15.0" layoutY="323.0" text="Extract Location" />
+      <TextField fx:id="extractTextField" layoutX="144.0" layoutY="319.0" prefHeight="25.0" prefWidth="233.0" />
+      <Label layoutX="15.0" layoutY="369.0" text="Download Location" />
+      <TextField fx:id="downloadTextField" layoutX="144.0" layoutY="365.0" prefHeight="25.0" prefWidth="233.0" />
+      <Label layoutX="15.0" layoutY="414.0" text="Archive Location" />
+      <TextField fx:id="archiveTextField" layoutX="144.0" layoutY="410.0" prefHeight="25.0" prefWidth="233.0" />
+   </children>
+</AnchorPane>
