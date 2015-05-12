@@ -58,7 +58,7 @@ public class SmartloadTest {
 	 * Checks whether the user is available for transactioning on smartcall's side
 	 * Could be blocked for whatever reason/ or a bad setup 
 	 */
-	@Test(timeout=2000)
+	@Test
 	public void isDealerRegistered() {
 		DealerRegisteredResponse response = smartload.isDealerRegistered(msisdn);
 		System.out.println(ReflectionToStringBuilder.toString(response));
@@ -71,19 +71,19 @@ public class SmartloadTest {
 	 * Please make sure smartcall has enough funds in your account for testing,
 	 * This is important for other subsequent tests as well
 	 */
-	@Test(timeout=2000)
+	@Test
 	public void getDealerBalance() {
 			DealerBalanceResponse response = smartload.getDealerBalance();
 			System.out.println(ReflectionToStringBuilder.toString(response));
 			Assert.assertNotNull(response);
-			Assert.assertTrue("The contents for you balance were unexpected ",response.getBalance()> 100.10);
+			Assert.assertTrue("The contents for you balance were unexpected ",response.getBalance()> 0.10);
 	}
 	
 	/**
 	 * tests the act of transferring funds from one account to the other
 	 * tests the balances thereafter
 	 */
-	@Test(timeout=2000)
+	@Test
 	public void performFundsTransfer() {
 		int AMOUNT_TO_TRANSFER = 10;
 		String MSISDN_RECIPIENT = "27829909779";
@@ -94,7 +94,7 @@ public class SmartloadTest {
 		request.setSendSms(SEND_RECIPIENT_A_INFORMATION_SMS); // no sms's are sent on the test system
 		FundTransferResponse response = smartload.performFundsTransfer(request);
 		System.out.println(ReflectionToStringBuilder.toString(response));
-		Assert.assertTrue("Account should have at least R" + AMOUNT_TO_TRANSFER,response.getNewDealerBalance()>=AMOUNT_TO_TRANSFER);
+		Assert.assertTrue("Account should be now R0" + AMOUNT_TO_TRANSFER,response.getNewDealerBalance()==0);
 		FundTransferResponse response2 = smartload.performFundsTransfer(request);
 		System.out.println(ReflectionToStringBuilder.toString(response));
 		Assert.assertTrue("Second request should fail due to 5 minute ",response2.getError().getMessage()!=null);
@@ -130,7 +130,7 @@ public class SmartloadTest {
 	public void performRechargeWithClientReference() {
 		
 		try {
-			String recipientOfProduct = "27827861223"; // for electricity this could be a meter no
+			String recipientOfProduct = "27827861225"; // for electricity this could be a meter no
 			Long productId = new Long(24); // Telkom Mobile Airtime
 			BigDecimal airtime = new BigDecimal(6); 
 			
@@ -160,7 +160,7 @@ public class SmartloadTest {
      * Tests sends a request and checks if the item is returned
      */
 	public void getLastTransaction() {
-		String recipientOfProduct = "27827861223"; // for electricity this could be a meter no
+		String recipientOfProduct = "27827861225"; // for electricity this could be a meter no
 		Long productId = new Long(24); // Telkom Mobile Airtime
 		BigDecimal airtime = new BigDecimal(7); 
 		
@@ -189,7 +189,7 @@ public class SmartloadTest {
      * Gets the last transaction that was linked to the client generated reference number
      * Tests sends a request and checks if the item is returned
      */
-	@Test(timeout = 3000)
+	@Test
 	public void getLastTransactionForClientReference() {
 		String recipientOfProduct = "27827861225"; // for electricity this could be a meter no
 		Long productId = new Long(24); // Telkom Mobile Airtime
@@ -204,9 +204,15 @@ public class SmartloadTest {
 		rechargeRequest.setSmsRecipientMsisdn(recipientOfProduct); // where the sms must go
 		Random generator = new Random(); 
 		String uniqueClientReferenceNumber = Long.toString(generator.nextInt(10000) + 1);
-		smartload.performRechargeWithClientReference(rechargeRequest,uniqueClientReferenceNumber);
+		RechargeResponse response = smartload.performRechargeWithClientReference(rechargeRequest,uniqueClientReferenceNumber);
+		System.out.println(ReflectionToStringBuilder.toString(response));
+		if (response.getError()!= null){
+			System.out.println(ReflectionToStringBuilder.toString(response.getError().getMessage()));
+		}
+		Assert.assertEquals("Recharge should be successful","SUCCESS", response.getResponseCode().SUCCESS.name());
 		LastTransactionResponse lastTransaction = smartload.getLastTransactionForClientReference(uniqueClientReferenceNumber);
 		System.out.println(ReflectionToStringBuilder.toString(lastTransaction));
+		Assert.assertNotNull("Should get a transaction back for " +uniqueClientReferenceNumber,lastTransaction.getTransaction());
 		System.out.println(ReflectionToStringBuilder.toString(lastTransaction.getTransaction()));
 		Assert.assertTrue("Last transaction was incorrect ",lastTransaction.getTransaction().getRecipientMsisdn().equals(recipientOfProduct));
 		Assert.assertTrue("Last transaction was incorrect ",lastTransaction.getTransaction().getReference()!=null);
@@ -216,9 +222,9 @@ public class SmartloadTest {
      * Gets the last transaction that was linked to the server generated reference number
      * Tests sends a request and checks if the item is returned
      */
-	@Test(timeout = 3000)
+	@Test
 	public void getLastTransactionForReference() {
-		String recipientOfProduct = "27827861224"; // for electricity this could be a meter no
+		String recipientOfProduct = "27827861225"; // for electricity this could be a meter no
 		Long productId = new Long(24); // Telkom Mobile Airtime
 		BigDecimal airtime = new BigDecimal(9); 
 			
