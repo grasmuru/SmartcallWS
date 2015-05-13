@@ -33,7 +33,7 @@ public class SmartloadOrderTest {
 	private static final String ENDPOINT_ADDRESS_ORDER = "http://www.smartcallesb.co.za:8090/SmartcallServices/SmartloadOrderService";
 	private static final String WSDL_ORDER = ENDPOINT_ADDRESS_ORDER+"?wsdl";
 	
-	private String msisdn = "27827861223";
+	private String msisdn = "27827861225";
 	
 	private static final String TEST_FILE_LOCATION = System.getProperty("java.io.tmpdir");
 	

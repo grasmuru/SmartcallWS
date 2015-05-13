@@ -188,6 +188,8 @@ public class SmartloadTest {
 	/**
      * Gets the last transaction that was linked to the client generated reference number
      * Tests sends a request and checks if the item is returned
+     * Please note you can have a duplicate transaction check forcing you to run the test in 5 minutes time or actually change 
+     * recharge details
      */
 	@Test
 	public void getLastTransactionForClientReference() {
