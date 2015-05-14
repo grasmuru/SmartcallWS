@@ -32,7 +32,7 @@ public class KeyStoreImplementation implements KeyInterface {
 	public static final String CONFIG_HOME = APP_HOME+FILE_SEPARATOR+"config"+FILE_SEPARATOR+"keys";
 	
 	public static final String URLPATH ="file:/"+ APP_HOME+FILE_SEPARATOR+"config"+FILE_SEPARATOR+"keys";
-	
+ 	
 	public static final String smartcallCertificate = "smartcallservices.cer";
 	
 	public static final String clientKeyStore = "clientKeystore.jks";
