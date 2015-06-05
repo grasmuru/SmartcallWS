@@ -95,9 +95,9 @@
 						</goals>
 						<configuration>
 							<wsdls>
-								<wsdl>http://www.smartcallesb.co.za:8090/SmartcallServices/SmartloadService?wsdl</wsdl>
-								<wsdl>http://www.smartcallesb.co.za:8090/SmartcallServices/SmartloadOrderService?wsdl</wsdl>
-								<wsdl>http://www.smartcallesb.co.za:8090/SmartcallServices/SmartBatchService?wsdl</wsdl>
+								<wsdl>http://www.smartcallesb.co.za:8091/SmartcallServices/SmartloadService?wsdl</wsdl>
+								<wsdl>http://www.smartcallesb.co.za:8091/SmartcallServices/SmartloadOrderService?wsdl</wsdl>
+								<wsdl>http://www.smartcallesb.co.za:8091/SmartcallServices/SmartBatchService?wsdl</wsdl>
 							</wsdls>
 							<sourceDirectory>${basedir}/target/generated/src/main/java</sourceDirectory>
 							<extension>true</extension>
