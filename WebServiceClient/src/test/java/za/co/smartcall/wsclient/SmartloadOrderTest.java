@@ -10,6 +10,7 @@ import net.lingala.zip4j.model.FileHeader;
 
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import za.co.smartcall._2010._12.message.BatchVoucherRequest;
@@ -27,13 +28,13 @@ public class SmartloadOrderTest {
 	
 	private SmartloadOrderServiceInterface smartloadBatchOrder;
 	
-	private static final String ENDPOINT_ADDRESS_BATCH = "http://www.smartcallesb.co.za:8090/SmartcallServices/SmartBatchService";
+	private static final String ENDPOINT_ADDRESS_BATCH = "http://www.smartcallesb.co.za:8091/SmartcallServices2/SmartBatchService";
 	private static final String WSDL_BATCH = ENDPOINT_ADDRESS_BATCH+"?wsdl";
 	
-	private static final String ENDPOINT_ADDRESS_ORDER = "http://www.smartcallesb.co.za:8090/SmartcallServices/SmartloadOrderService";
+	private static final String ENDPOINT_ADDRESS_ORDER = "http://www.smartcallesb.co.za:8091/SmartcallServices2/SmartloadOrderService";
 	private static final String WSDL_ORDER = ENDPOINT_ADDRESS_ORDER+"?wsdl";
 	
-	private String msisdn = "27827861225";
+	private String msisdn = "27725797942";
 	
 	private static final String TEST_FILE_LOCATION = System.getProperty("java.io.tmpdir");
 	
@@ -51,6 +52,7 @@ public class SmartloadOrderTest {
 	 * The first step of ordering and getting a reference numebr and password for your test
 	 */
 	@Test(timeout=10000)
+	@Ignore
 	public void createVoucherRequest() {
 		
 		try {
@@ -76,6 +78,7 @@ public class SmartloadOrderTest {
 	 * A new file is generated but with a new password.
 	 */
 	@Test(timeout=20000)
+	@Ignore
 	public void recreateVoucherRequest() {
 		try {
 			int numberOfVouchers = 2; // keep small so test reserve is not depleted too quickly
@@ -101,6 +104,7 @@ public class SmartloadOrderTest {
 	 * The unzipping of the file is also attempted with the file
 	 */
 	@Test(timeout=70000)
+	@Ignore
 	public void orderAndRetrieveFile() {
 		try {
 			int numberOfVouchers = 1; // keep small so test reserve is not depleted too quickly
@@ -146,6 +150,7 @@ public class SmartloadOrderTest {
 	}	
 	
 	@Test(timeout=70000)
+	@Ignore
 	public void orderAndRetrieveFileDud() {
 		try {
 

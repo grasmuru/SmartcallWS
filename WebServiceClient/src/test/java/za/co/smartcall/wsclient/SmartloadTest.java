@@ -9,6 +9,7 @@ import java.util.Random;
 import org.apache.commons.lang.builder.ReflectionToStringBuilder;
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import za.co.smartcall._2010._12.message.DealerBalanceResponse;
@@ -32,10 +33,10 @@ public class SmartloadTest {
 	
 	private SmartloadInterface smartload;
 	
-	private static final String ENDPOINT_ADDRESS = "http://www.smartcallesb.co.za:8090/SmartcallServices/SmartloadService";
+	private static final String ENDPOINT_ADDRESS = "http://www.smartcallesb.co.za:8091/SmartcallServices2/SmartloadService";
 	private static final String WSDL = ENDPOINT_ADDRESS+"?wsdl";
 	
-	private String msisdn = "27827861225";
+	private String msisdn = "27725797942";
 	
 	@Before
 	/**
@@ -72,6 +73,7 @@ public class SmartloadTest {
 	 * This is important for other subsequent tests as well
 	 */
 	@Test
+	@Ignore
 	public void getDealerBalance() {
 			DealerBalanceResponse response = smartload.getDealerBalance();
 			System.out.println(ReflectionToStringBuilder.toString(response));
@@ -84,6 +86,7 @@ public class SmartloadTest {
 	 * tests the balances thereafter
 	 */
 	@Test
+	@Ignore
 	public void performFundsTransfer() {
 		int AMOUNT_TO_TRANSFER = 10;
 		String MSISDN_RECIPIENT = "27829909779";
@@ -105,6 +108,7 @@ public class SmartloadTest {
 	 * and then all products associated with the ProductType
 	 */
 	@Test(timeout=40000)
+	@Ignore
 	public void getProducts(){
 		List<za.co.smartcall._2010._12.message.Product> products = new ArrayList<za.co.smartcall._2010._12.message.Product>();
    	    List<za.co.smartcall._2010._12.common.Network> genNetworks = smartload.getNetworks();
@@ -127,10 +131,11 @@ public class SmartloadTest {
 	 * Does a recharge to a phone number for product 
 	 */
 	@Test(timeout=5000)
+	@Ignore
 	public void performRechargeWithClientReference() {
 		
 		try {
-			String recipientOfProduct = "27827861225"; // for electricity this could be a meter no
+			String recipientOfProduct = "27827861223"; // for electricity this could be a meter no
 			Long productId = new Long(24); // Telkom Mobile Airtime
 			BigDecimal airtime = new BigDecimal(6); 
 			
@@ -159,8 +164,9 @@ public class SmartloadTest {
      * irrespective.
      * Tests sends a request and checks if the item is returned
      */
+	@Ignore
 	public void getLastTransaction() {
-		String recipientOfProduct = "27827861225"; // for electricity this could be a meter no
+		String recipientOfProduct = "27827861223"; // for electricity this could be a meter no
 		Long productId = new Long(24); // Telkom Mobile Airtime
 		BigDecimal airtime = new BigDecimal(7); 
 		
@@ -192,8 +198,9 @@ public class SmartloadTest {
      * recharge details
      */
 	@Test
+	@Ignore
 	public void getLastTransactionForClientReference() {
-		String recipientOfProduct = "27827861225"; // for electricity this could be a meter no
+		String recipientOfProduct = "27827861223"; // for electricity this could be a meter no
 		Long productId = new Long(24); // Telkom Mobile Airtime
 		BigDecimal airtime = new BigDecimal(8); 
 			
@@ -225,8 +232,9 @@ public class SmartloadTest {
      * Tests sends a request and checks if the item is returned
      */
 	@Test
+	@Ignore
 	public void getLastTransactionForReference() {
-		String recipientOfProduct = "27827861225"; // for electricity this could be a meter no
+		String recipientOfProduct = "27827861223"; // for electricity this could be a meter no
 		Long productId = new Long(24); // Telkom Mobile Airtime
 		BigDecimal airtime = new BigDecimal(9); 
 			

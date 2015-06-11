@@ -14,7 +14,7 @@ public class CredentialSetupTest {
 	
 	private KeyInterface keyInterface;
 	
-	private static final String TEST_USER = "27827861225";
+	private static final String TEST_USER = "27725797942";
 
 	
 	@Before
