@@ -199,8 +199,8 @@ public class RefPreferences {
 	        Preferences prefs = Preferences.userNodeForPackage(MainApp.class);
 	        String url = prefs.get("url", null);
 	        if (url == null){
-	        	setWebServiceUrl(MainApp.ENDPOINT_ADDRESS);
-	        	return MainApp.ENDPOINT_ADDRESS;
+	        	setWebServiceUrl(MainApp.ENDPOINT_ADDRESS_BASE);
+	        	return MainApp.ENDPOINT_ADDRESS_BASE;
 	        }
 	        return url;
 	    }

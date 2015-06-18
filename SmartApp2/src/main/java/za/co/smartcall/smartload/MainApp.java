@@ -69,14 +69,16 @@ public class MainApp extends Application {
     
     @Getter @Setter private KeyInterface keyInterface;
     
-	protected static final String ENDPOINT_ADDRESS = "http://www.smartcallesb.co.za:8090/SmartcallServices/SmartloadService";
-	protected static final String WSDL = ENDPOINT_ADDRESS+"?wsdl";
+    protected static String ENDPOINT_ADDRESS_BASE = "http://www.smartcallesb.co.za:8091/SmartcallServices2/"; 
+    
+	protected static String ENDPOINT_ADDRESS = ENDPOINT_ADDRESS_BASE+"SmartloadService";
+	protected static String WSDL = ENDPOINT_ADDRESS+"?wsdl";
 	
-	protected static final String ENDPOINT_ADDRESS_ORDER = "http://www.smartcallesb.co.za:8090/SmartcallServices/SmartBatchService";
-	protected static final String WSDL_ORDER = ENDPOINT_ADDRESS_ORDER+"?wsdl";
+	protected static String ENDPOINT_ADDRESS_ORDER = ENDPOINT_ADDRESS_BASE+"SmartBatchService";
+	protected static String WSDL_ORDER = ENDPOINT_ADDRESS_ORDER+"?wsdl";
 	
-	protected static final String ENDPOINT_ADDRESS_ORDER_RESP = "http://www.smartcallesb.co.za:8090/SmartcallServices/SmartloadOrderService";
-	protected static final String WSDL_ORDER_RESP = ENDPOINT_ADDRESS_ORDER_RESP+"?wsdl";
+	protected static String ENDPOINT_ADDRESS_ORDER_RESP = ENDPOINT_ADDRESS_BASE+"SmartloadOrderService";
+	protected static String WSDL_ORDER_RESP = ENDPOINT_ADDRESS_ORDER_RESP+"?wsdl";
 
     public static final String FILE_SEPARATOR = System.getProperty("file.separator");
     
