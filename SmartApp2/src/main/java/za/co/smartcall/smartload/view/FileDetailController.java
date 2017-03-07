@@ -5,9 +5,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import lombok.extern.log4j.Log4j;
-
-import org.controlsfx.dialog.Dialogs;
-
 import za.co.smartcall.smartload.DialogFactory;
 import za.co.smartcall.smartload.Extractor;
 import za.co.smartcall.smartload.MainApp;

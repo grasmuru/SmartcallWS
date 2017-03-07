@@ -28,8 +28,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.util.Callback;
 import lombok.extern.log4j.Log4j;
 
-import org.controlsfx.control.action.Action;
-import org.controlsfx.dialog.Dialog;
+
 
 import za.co.smartcall._2010._12.common.ResponseCode;
 import za.co.smartcall._2010._12.message.BatchVoucherRequest;
@@ -200,14 +199,14 @@ public class FileOrderView {
     	StringJoiner item = new StringJoiner("\n\n"); 
     	selectedOrders.forEach(fileorder ->item.add(parse(fileorder)));
     	 
-    	String combined = "You have selected to order:\n" +item.toString();
-    	Action response = DialogFactory.createDialogConfirm("Continue", combined, "Do you want to continue?");
-    	if (response == Dialog.Actions.YES) {
+    	String combined = "You have selected to order:\n" +item.toString()+"\n\n";
+    	String answer = FxDialogs.showTextInput(combined + "Do you want to continue?", "Yes", "No");
+    	if (answer.equals("Yes")) {
     		long batchId = System.currentTimeMillis();
     		selectedOrders.forEach(fileOrder->performBatchRequest(fileOrder,batchId));
     		DialogFactory.createDialogInformation("Information Dialog", null, "Your requests have been submitted please check the overview for request results");
     		clearButtonSelect();
-    	} else if (response == Dialog.Actions.NO){
+    	} else if (answer.equals("No")){
     	   //
     	} else {
     		clearButtonSelect();

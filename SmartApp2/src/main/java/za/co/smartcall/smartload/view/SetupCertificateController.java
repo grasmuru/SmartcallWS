@@ -7,9 +7,6 @@ import javafx.scene.control.TextField;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import lombok.extern.log4j.Log4j;
-
-import org.controlsfx.dialog.Dialogs;
-
 import za.co.smartcall.smartload.DialogFactory;
 import za.co.smartcall.smartload.MainApp;
 import za.co.smartcall.smartload.RefPreferences;

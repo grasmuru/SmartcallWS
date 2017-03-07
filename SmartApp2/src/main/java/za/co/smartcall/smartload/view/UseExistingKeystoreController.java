@@ -10,7 +10,6 @@ import lombok.extern.log4j.Log4j;
 
 import org.apache.commons.configuration.ConfigurationException;
 import org.apache.commons.configuration.PropertiesConfiguration;
-import org.controlsfx.dialog.Dialogs;
 
 import za.co.smartcall.smartload.DialogFactory;
 import za.co.smartcall.smartload.MainApp;

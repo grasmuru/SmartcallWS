@@ -69,16 +69,16 @@ public class MainApp extends Application {
     
     @Getter @Setter private KeyInterface keyInterface;
     
-    protected static String ENDPOINT_ADDRESS_BASE = "http://www.smartcallesb.co.za:8091/SmartcallServices2/"; 
+    protected static String ENDPOINT_ADDRESS_BASE = "http://www.smartcallesb.co.za:8090/SmartcallServices2/"; 
     
-	protected static String ENDPOINT_ADDRESS = ENDPOINT_ADDRESS_BASE+"SmartloadService";
-	protected static String WSDL = ENDPOINT_ADDRESS+"?wsdl";
-	
-	protected static String ENDPOINT_ADDRESS_ORDER = ENDPOINT_ADDRESS_BASE+"SmartBatchService";
-	protected static String WSDL_ORDER = ENDPOINT_ADDRESS_ORDER+"?wsdl";
-	
-	protected static String ENDPOINT_ADDRESS_ORDER_RESP = ENDPOINT_ADDRESS_BASE+"SmartloadOrderService";
-	protected static String WSDL_ORDER_RESP = ENDPOINT_ADDRESS_ORDER_RESP+"?wsdl";
+//	protected static String ENDPOINT_ADDRESS = ENDPOINT_ADDRESS_BASE+"SmartloadService";
+//	protected static String WSDL = ENDPOINT_ADDRESS+"?wsdl";
+//	
+//	protected static String ENDPOINT_ADDRESS_ORDER = ENDPOINT_ADDRESS_BASE+"SmartBatchService";
+//	protected static String WSDL_ORDER = ENDPOINT_ADDRESS_ORDER+"?wsdl";
+//	
+//	protected static String ENDPOINT_ADDRESS_ORDER_RESP = ENDPOINT_ADDRESS_BASE+"SmartloadOrderService";
+//	protected static String WSDL_ORDER_RESP = ENDPOINT_ADDRESS_ORDER_RESP+"?wsdl";
 
     public static final String FILE_SEPARATOR = System.getProperty("file.separator");
     
@@ -160,7 +160,7 @@ public class MainApp extends Application {
 			    	showSetupInitial();
 			    	
 			    }
-			    DialogFactory.createDialogProgress(primaryStage,"Progress Dialog","Loading configuration",service);
+			 //   DialogFactory.createDialogProgress(primaryStage,"Progress Dialog","Loading configuration",service);
 		        service.start();
         		service.setOnSucceeded(new EventHandler<WorkerStateEvent>() {
 			            @Override
@@ -241,6 +241,19 @@ public class MainApp extends Application {
 		Bootstrapper strapper = new Bootstrapper();
 		keyInterface = new KeyStoreImplementation();
 		keyInterface.setHomeLocation(APP_HOME);
+		
+		String currentBase = RefPreferences.getWebServiceUrl(); 
+		    
+		String ENDPOINT_ADDRESS = currentBase+"SmartloadService";
+		String WSDL = ENDPOINT_ADDRESS+"?wsdl";
+			
+		String ENDPOINT_ADDRESS_ORDER = ENDPOINT_ADDRESS_BASE+"SmartBatchService";
+		String WSDL_ORDER = ENDPOINT_ADDRESS_ORDER+"?wsdl";
+			
+		String ENDPOINT_ADDRESS_ORDER_RESP = ENDPOINT_ADDRESS_BASE+"SmartloadOrderService";
+		String WSDL_ORDER_RESP = ENDPOINT_ADDRESS_ORDER_RESP+"?wsdl";
+		
+		
 		smartloadBatchOrderInterface = strapper.setupSmartloadOrderBatch(WSDL_ORDER_RESP, RefPreferences.getDealerMsisdn(), RefPreferences.getDownloadLocation());
 		smartloadInterface =  strapper.setupSmartload(WSDL,RefPreferences.getDealerMsisdn());
 		smartloadBatchInterface = strapper.setupSmartloadBatch(WSDL_ORDER, RefPreferences.getDealerMsisdn());

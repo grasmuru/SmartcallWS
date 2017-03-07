@@ -4,15 +4,11 @@ import java.math.BigDecimal;
 import java.text.NumberFormat;
 import java.text.ParseException;
 import java.util.Date;
-import java.util.function.Predicate;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import lombok.extern.log4j.Log4j;
-
-import org.controlsfx.dialog.Dialogs;
-
 import za.co.smartcall._2010._12.common.ResponseCode;
 import za.co.smartcall._2010._12.message.LastTransactionResponse;
 import za.co.smartcall._2010._12.message.ProductRechargeRequest;
@@ -23,7 +19,6 @@ import za.co.smartcall.smartload.DialogFactory;
 import za.co.smartcall.smartload.MainApp;
 import za.co.smartcall.smartload.hibernate.SubmissionStatus;
 import za.co.smartcall.smartload.hibernate.Transaction;
-import za.co.smartcall.smartload.hibernate.Transactions;
 import za.co.smartcall.smartload.model.DataAccess;
 
 @Log4j
