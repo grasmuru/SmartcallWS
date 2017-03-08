@@ -73,7 +73,7 @@ public class MainApp extends Application {
     
 //	protected static String ENDPOINT_ADDRESS = ENDPOINT_ADDRESS_BASE+"SmartloadService";
 //	protected static String WSDL = ENDPOINT_ADDRESS+"?wsdl";
-//	
+	
 //	protected static String ENDPOINT_ADDRESS_ORDER = ENDPOINT_ADDRESS_BASE+"SmartBatchService";
 //	protected static String WSDL_ORDER = ENDPOINT_ADDRESS_ORDER+"?wsdl";
 //	
@@ -192,14 +192,19 @@ public class MainApp extends Application {
 	 */
 	public MainApp() throws IOException, ConfigurationException {
 		
-		 basicPath = APP_HOME;
-		
-		 RefPreferences.DEFAULT_DOWNLOAD_LOCATION = basicPath+FILE_SEPARATOR + "files";
-		 RefPreferences.DEFAULT_EXTRACT_LOCATION = basicPath+FILE_SEPARATOR + "extract";
-		 RefPreferences.DEFAULT_LOGGING_LOCATION = basicPath+FILE_SEPARATOR + "logging";
-		 RefPreferences.DEFAULT_ARCHIVE_LOCATION = basicPath+FILE_SEPARATOR + "archive";
-		
-	 	setupLogging(RefPreferences.getLoggingLocation(),RefPreferences.getLogLevel());
+		 try {
+			basicPath = APP_HOME;
+			
+			 RefPreferences.DEFAULT_DOWNLOAD_LOCATION = basicPath+FILE_SEPARATOR + "files";
+			 RefPreferences.DEFAULT_EXTRACT_LOCATION = basicPath+FILE_SEPARATOR + "extract";
+			 RefPreferences.DEFAULT_LOGGING_LOCATION = basicPath+FILE_SEPARATOR + "logging";
+			 RefPreferences.DEFAULT_ARCHIVE_LOCATION = basicPath+FILE_SEPARATOR + "archive";
+			
+			setupLogging(RefPreferences.getLoggingLocation(),RefPreferences.getLogLevel());
+		} catch (Throwable e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		  
 		 
@@ -247,17 +252,17 @@ public class MainApp extends Application {
 		String ENDPOINT_ADDRESS = currentBase+"SmartloadService";
 		String WSDL = ENDPOINT_ADDRESS+"?wsdl";
 			
-		String ENDPOINT_ADDRESS_ORDER = ENDPOINT_ADDRESS_BASE+"SmartBatchService";
+		String ENDPOINT_ADDRESS_ORDER = currentBase+"SmartBatchService";
 		String WSDL_ORDER = ENDPOINT_ADDRESS_ORDER+"?wsdl";
 			
-		String ENDPOINT_ADDRESS_ORDER_RESP = ENDPOINT_ADDRESS_BASE+"SmartloadOrderService";
+		String ENDPOINT_ADDRESS_ORDER_RESP = currentBase+"SmartloadOrderService";
 		String WSDL_ORDER_RESP = ENDPOINT_ADDRESS_ORDER_RESP+"?wsdl";
 		
 		
-		smartloadBatchOrderInterface = strapper.setupSmartloadOrderBatch(WSDL_ORDER_RESP, RefPreferences.getDealerMsisdn(), RefPreferences.getDownloadLocation());
+		
 		smartloadInterface =  strapper.setupSmartload(WSDL,RefPreferences.getDealerMsisdn());
 		smartloadBatchInterface = strapper.setupSmartloadBatch(WSDL_ORDER, RefPreferences.getDealerMsisdn());
-	
+		smartloadBatchOrderInterface = strapper.setupSmartloadOrderBatch(WSDL_ORDER_RESP, RefPreferences.getDealerMsisdn(), RefPreferences.getDownloadLocation());
 	}
 
 
